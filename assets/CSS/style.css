@@ -1,0 +1,11 @@
+.card {
+    align-content: center;
+    margin: auto;
+    width: 18rem;
+}
+
+#map-card {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+}
