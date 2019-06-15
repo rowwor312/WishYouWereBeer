@@ -1,0 +1,41 @@
+
+#buttons {
+    /* align-content: center;
+    padding-left: 40px;
+    padding-right: 25px; */
+}
+
+#mapimage {
+    align-content: center;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 25px;
+}
+.buttons {
+    width: 36.45em;
+    margin: auto;
+}
+.action-btn {
+    width: 12em;
+    display: inline-block
+}
+
+@media only screen and (min-width: 370px) {
+    body {
+        width: 100vw;
+    }
+    .container {
+        width: 90%;
+        max-width: 90%;
+        margin: auto;
+    }
+    .buttons {
+        width: 24em;
+        margin: auto;
+    }
+    .action-btn {
+        width: 7.5em;
+        display: inline-block;
+        /* font-size: 0.8em;/ */
+    }
+}
