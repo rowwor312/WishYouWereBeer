@@ -1,3 +1,63 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ----- INITIALIZE MAP -----
 
 //Step 1: initialize communication with the platform
@@ -85,7 +145,7 @@ addCirclesToMap(map);
 
 // ----- Script for placing marker on map -----
 // Create a marker image
-var icon = new H.map.Icon("assets/beer.png");
+var icon = new H.map.Icon("assets/images/beer.png");
 
 // Location for marker
 var marker = new H.map.Marker({ lng: -86.74898, lat: 36.1778 }, { icon: icon });
