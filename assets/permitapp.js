@@ -2,8 +2,17 @@
 $("button").on("click", function () {
     // Grabbing and storing the data-location property value from the button
     var mapLocation = $(this).attr("data-location");
+    var mapRange = $(this).attr("data-range");
 
-    var queryURL = "https://data.nashville.gov/resource/3wb6-xy3j.json?$where=within_circle(mapped_location," + mapLocation + ")&permit_subtype=ONSALES&$limit=10";
+    // // Moves the map to display over selected neighborhood
+    // moveMapToNeighborhood(map) {
+    //     map.setCenter(mapLocation);
+    //     map.setZoom(12);
+    // };
+    // moveMapToNeighborhood(map);
+
+
+    var queryURL = "https://data.nashville.gov/resource/3wb6-xy3j.json?$where=within_circle(mapped_location," + mapLocation + mapRange + ")&permit_subtype=ONSALES&$limit=10";
 
     // Perfoming an AJAX GET request to queryURL
     $.ajax({
@@ -16,8 +25,18 @@ $("button").on("click", function () {
             console.log(queryURL);
 
             // Storing the data from the AJAX request in the results variable
-            var coordList = [];
+            var results = response;
+            console.log(results);
 
+            // Create arrays for Latitudes and Longitutes and empties them if they are populated
+            var latList = [];
+            var longList = [];
+
+            // Removes all previously placed markers (and circles) from map
+            map.removeObjects(map.getObjects());
+
+            // Adds neighborhood circles back to the map
+            addCirclesToMap(map);
 
             // Looping through each result item
             for (let i = 0; i < response.length; i++) {
@@ -25,16 +44,24 @@ $("button").on("click", function () {
                 // Creating and storing a div tag
                 var nameDiv = $("<div>");
 
-                //         // Creating a paragraph tag with the result item"s business name
+                // Creating a paragraph tag with the result item"s business name
                 var businessName = $("<p>").text("Business Name: " + response[i].business_name);
                 var humanAddress = $("<p>").text(response[i].mapped_location.human_address);
                 var plat = $("<p>").text("Latitude: " + response[i].mapped_location.latitude);
                 var plong = $("<p>").text("Longitude: " + response[i].mapped_location.longitude);
 
-                coordList.push([response[i].mapped_location.latitude, response[i].mapped_location.longitude]);
+                latList.push(response[i].mapped_location.latitude);
+                longList.push(response[i].mapped_location.longitude);
 
+                // ----- Script for placing marker on map -----
+                // Create a marker image
+                var icon = new H.map.Icon("assets/images/beer.png");
 
-                // debugger;
+                // Location for marker
+                var marker = new H.map.Marker({ lat: latList[i], lng: longList[i] }, { icon: icon });
+
+                // Add marker on map
+                map.addObject(marker);
 
                 // Appending the paragraph and image tag to the nameDiv
                 nameDiv.append(businessName);
@@ -49,72 +76,11 @@ $("button").on("click", function () {
                 $("#table-data").append(nameDiv)
 
 
-            }
+            };
 
-            console.log(coordList);
-
-            //     // Obtain routing service and create routing request parameters
-            //     var router = platform.getRoutingService(),
-            //         routeRequestParams = {
-            //             mode: "fastest;pedestrian",
-            //             representation: "display",
-            //             legattributes: "li",
-            //             waypoint0: coordList[0],
-            //             waypoint1: "",
-            //             waypoint2: "",
-            //             waypoint3: "",
-            //             waypoint4: "",
-            //             waypoint5: "",
-            //             waypoint6: "",
-            //             waypoint7: "",
-            //             waypoint8: "",
-            //             waypoint9: "",
-            //         };
-
-            //     console.log(routeRequestParams.waypoint0);
-
-            //     // calculate route
-            //     router.calculateRoute(
-            //         routeRequestParams,
-            //         function (response) {
-            //             var lineString = new H.geo.LineString(),
-            //                 route = response.response.route[0],
-            //                 routeShape = route.shape,
-            //                 polyline,
-            //                 linkids = [];
-
-            //             // collect link ids for the later matching with the PDE data
-            //             route.leg.forEach(function (leg) {
-            //                 leg.link.forEach(function (link) {
-            //                     linkids.push(link.linkId.substring(1));
-            //                 });
-            //             })
-
-            //             // create route poly;line
-            //             routeShape.forEach(function (point) {
-            //                 var parts = point.split(",");
-            //                 lineString.pushLatLngAlt(parts[0], parts[1]);
-            //             });
-            //             polyline = new H.map.Polyline(lineString, {
-            //                 style: {
-            //                     lineWidth: 8,
-            //                     strokeColor: "rgba(0, 128, 255, 0.7)"
-            //                 },
-            //                 arrows: new mapsjs.map.ArrowStyle()
-            //             });
-
-            //             map.addObject(polyline);
-            //             map.setViewBounds(polyline.getBounds(), true);
-
-            //             // findStations(linkids, polyline)
-            //         },
-            //         function () {
-            //             alert("Routing request error");
-            //         }
-            //     );
-
+            console.log(latList);
+            console.log(longList);
         });
-
 });
 
 // ----- INITIALIZE MAP -----
@@ -137,7 +103,7 @@ var map = new H.Map(document.getElementById("map"),
 
 // Moves the map to display over Nashville
 function moveMapToNashville(map) {
-    map.setCenter({ lng: -86.7876, lat: 36.1565 });
+    map.setCenter({ lat: 36.1565, lng: -86.7876 });
     map.setZoom(13.5);
 }
 
@@ -201,14 +167,3 @@ function addCirclesToMap(map) {
     ));
 }
 addCirclesToMap(map);
-
-// ----- Script for placing marker on map -----
-// Create a marker image
-var icon = new H.map.Icon("assets/images/beer.png");
-
-// Location for marker
-var marker = new H.map.Marker({ lng: -86.74898, lat: 36.1778 }, { icon: icon });
-
-// Add marker on map
-map.addObject(marker);
-
