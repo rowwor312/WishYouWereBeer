@@ -1,15 +1,18 @@
 // Adding click event listen listener to all buttons
 $("button").on("click", function () {
+
     // Grabbing and storing the data-location property value from the button
     var mapLocation = $(this).attr("data-location");
     var mapRange = $(this).attr("data-range");
+    var mapLat = $(this).attr("data-lat");
+    var mapLon = $(this).attr("data-lon");
 
-    // // Moves the map to display over selected neighborhood
-    // moveMapToNeighborhood(map) {
-    //     map.setCenter(mapLocation);
-    //     map.setZoom(12);
-    // };
-    // moveMapToNeighborhood(map);
+    // Moves the map to display over selected neighborhood
+    function moveMapToNeighborhood(map) {
+        map.setCenter({ lat: mapLat, lng: mapLon });
+        map.setZoom(16);
+    };
+    moveMapToNeighborhood(map);
 
 
     var queryURL = "https://data.nashville.gov/resource/3wb6-xy3j.json?$where=within_circle(mapped_location," + mapLocation + mapRange + ")&permit_subtype=ONSALES&$limit=10";
@@ -154,7 +157,7 @@ function addCirclesToMap(map) {
     // Midtown
     map.addObject(new H.map.Circle(
         // The central point of the circle
-        { lat: 36.150333, lng: -86.795989 },
+        { lat: 36.151935, lng: -86.791285 },
         // The radius of the circle in meters
         300,
         {
