@@ -1,23 +1,38 @@
-body {
-    background-image: url("../images/Nashville-Classics-Downtown-Broadway-0524.jpg");
-    background-repeat: no-repeat;
-    background-size: initial;
+#title {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.title-card {
+    border: 0.2em solid black;
+    margin: 0em;
+    padding: 0em;
+    margin-top: 1em;
+}
+.title-text {
+    font-size: 3.5em;
+    margin: 0em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    font-family:'Swanky and Moo Moo', cursive;
 }
 
-#title {
-    border: solid black;
-}
 #map{
     overflow:hidden;
     position:relative;
     height:0;
-    border: solid black;
+    border: 0.2em solid black;
 }
 
+#select-a-hood {
+    width: 36.45em;
+    margin: auto;
+    align-content: center;
+    border: solid black;
+    font-family: "Geizer Regular";
+}
 .buttons {
     width: 36.45em;
     margin: auto;
-    /* border: solid black; */
 }
 
 .action-btn {
@@ -29,6 +44,10 @@ body {
 @media only screen and (min-width: 370px) {
     body {
         width: 100vw;
+        background-image: url("../images/Nashville-Classics-Downtown-Broadway-0524.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
     }
     .container {
         width: 90%;
@@ -42,10 +61,40 @@ body {
     .action-btn {
         width: 7.5em;
         display: inline-block;
-        /* font-size: 0.8em;/ */
+    }
+    #table-date {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 600px) {
+    body {
+        background-image: url("../images/Nashville-Classics-Downtown-Broadway-0504.jpg");
+        background-attachment: scroll;
     }
 }
 
+
 #table-data {
     border: solid black;
+    background-color: white;
+    font-family: "Geizer Regular";
+    font-size: 1.5rem;
+    align-content: center;
+}
+
+#table-body {
+    background-color: white;
+        font-family: 'Geizer Regular';
+}
+
+#midtown {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+#broadway {
+    background-color: rgba(55, 85, 170, 0.9);
+}
+
+#east {
+    background-color: rgba(0, 128, 0, 0.9);
 }
