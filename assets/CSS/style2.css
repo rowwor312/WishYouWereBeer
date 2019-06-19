@@ -1,23 +1,29 @@
-
-#buttons {
-    /* align-content: center;
-    padding-left: 40px;
-    padding-right: 25px; */
+body {
+    background-image: url("../images/Nashville-Classics-Downtown-Broadway-0524.jpg");
+    background-repeat: no-repeat;
+    background-size: initial;
 }
 
-#mapimage {
-    align-content: center;
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 25px;
+#title {
+    border: solid black;
 }
+#map{
+    overflow:hidden;
+    position:relative;
+    height:0;
+    border: solid black;
+}
+
 .buttons {
     width: 36.45em;
     margin: auto;
+    /* border: solid black; */
 }
+
 .action-btn {
     width: 12em;
-    display: inline-block
+    display: inline-block;
+    border: solid black;
 }
 
 @media only screen and (min-width: 370px) {
@@ -38,4 +44,8 @@
         display: inline-block;
         /* font-size: 0.8em;/ */
     }
+}
+
+#table-data {
+    border: solid black;
 }

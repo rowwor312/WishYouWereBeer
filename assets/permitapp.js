@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     // Adding click event listen listener to all buttons
