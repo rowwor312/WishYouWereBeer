@@ -64,4 +64,9 @@
 
 #table-data {
     border: solid black;
+    background-color: white;
+}
+
+#table-body {
+    background-color: white;
 }
