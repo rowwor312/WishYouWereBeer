@@ -15,7 +15,7 @@ $(document).ready(function () {
         // Moves the map to display over selected neighborhood
         function moveMapToNeighborhood(map) {
             map.setCenter({ lat: mapLat, lng: mapLon });
-            map.setZoom(16);
+            map.setZoom(15.75);
         };
         moveMapToNeighborhood(map);
 
@@ -98,8 +98,8 @@ $(document).ready(function () {
 
     // Moves the map to display over Nashville
     function moveMapToNashville(map) {
-        map.setCenter({ lat: 36.1565, lng: -86.7876 });
-        map.setZoom(13.5);
+        map.setCenter({ lat: 36.168312, lng: -86.768592 });
+        map.setZoom(13);
     }
 
     //Step 3: make the map interactive
