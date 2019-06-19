@@ -131,7 +131,7 @@ $(document).ready(function () {
             }
         ));
 
-        // Five Points
+        // East
         map.addObject(new H.map.Circle(
             // The central point of the circle
             { lat: 36.177495, lng: -86.751502 },

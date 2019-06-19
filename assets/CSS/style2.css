@@ -13,6 +13,7 @@
     margin: 0em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
+    font-family:'Swanky and Moo Moo', cursive;
 }
 
 #map{
@@ -22,6 +23,13 @@
     border: 0.2em solid black;
 }
 
+#select-a-hood {
+    width: 36.45em;
+    margin: auto;
+    align-content: center;
+    border: solid black;
+    font-family: "Geizer Regular";
+}
 .buttons {
     width: 36.45em;
     margin: auto;
@@ -39,6 +47,7 @@
         background-image: url("../images/Nashville-Classics-Downtown-Broadway-0524.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: scroll;
     }
     .container {
         width: 90%;
@@ -52,12 +61,15 @@
     .action-btn {
         width: 7.5em;
         display: inline-block;
-        /* font-size: 0.8em;/ */
+    }
+    #table-date {
+        font-size: 1.5rem;
     }
 }
 @media screen and (min-width: 600px) {
     body {
-        background-image: none;
+        background-image: url("../images/Nashville-Classics-Downtown-Broadway-0504.jpg");
+        background-attachment: scroll;
     }
 }
 
@@ -65,8 +77,24 @@
 #table-data {
     border: solid black;
     background-color: white;
+    font-family: "Geizer Regular";
+    font-size: 1.5rem;
+    align-content: center;
 }
 
 #table-body {
     background-color: white;
+        font-family: 'Geizer Regular';
+}
+
+#midtown {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+#broadway {
+    background-color: rgba(55, 85, 170, 0.9);
+}
+
+#east {
+    background-color: rgba(0, 128, 0, 0.9);
 }

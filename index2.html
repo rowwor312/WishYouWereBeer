@@ -8,6 +8,8 @@
 
     <title>Wish You Were Beer</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1549984893" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/CSS/style2.css">
@@ -29,7 +31,7 @@
         <div class="row">
             <div class="col s12 m12">
                 <div class="card">
-                    <div id="map" style="width: 100%; height: 300px ; background: grey" />
+                    <div id="map" style="width: 100%; height: 300px ; background: grey"></div>
 
                 </div>
             </div>
@@ -39,50 +41,56 @@
             <div class="col s0 m1"></div>
             <div class="col s12 m10">
 
+                <!-- <div class="row"> -->
+                    <!-- <div class="col s12 m12"> -->
+                        <div id="select-a-hood">
+                        <div class="card">Click a button to select a neighborhood</div>
+                    </div>
+                    </div>
 
-                <div class="buttons">
-                    <button class="waves-effect waves-light btn action-btn" type="submit" name="action" button
-                        data-location=36.151935,-86.791285 data-lat=36.151935 data-lon=-86.791285
-                        data-range=",400">Midtown</button>
-                    <button class="waves-effect waves-light btn action-btn" type="submit" name="action" button
-                        data-location=36.161570,-86.775980 data-lat=36.161570 data-lon=-86.775980
-                        data-range=",200">Broadway</button>
-                    <button class="waves-effect waves-light btn action-btn" type="submit" name="action" button
-                        data-location=36.177440,-86.750962 data-lat=36.177440 data-lon=-86.751962
-                        data-range=",500">East</button>
+                    <div class="buttons">
+                        <button class="waves-effect waves-light btn action-btn" id="midtown" type="submit" name="action"
+                            button data-location=36.151935,-86.791285 data-lat=36.151935 data-lon=-86.791285
+                            data-range=",400">Midtown</button>
+                        <button class="waves-effect waves-light btn action-btn" id="broadway" type="submit"
+                            name="action" button data-location=36.161570,-86.775980 data-lat=36.161570
+                            data-lon=-86.775980 data-range=",200">Broadway</button>
+                        <button class="waves-effect waves-light btn action-btn" id="east" type="submit" name="action"
+                            button data-location=36.177440,-86.750962 data-lat=36.177440 data-lon=-86.751962
+                            data-range=",500">East</button>
 
+                    </div>
+
+                    <br>
+                    <div>
+                        <table class="centered stripped-table" id="table-data">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="table-body">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <br>
-                <div>
-                    <table class="centered stripped-table" id="table-data">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="table-body">
-                        </tbody>
-                    </table>
-                </div>
+                <div class="col s0 m1"></div>
             </div>
-            <div class="col s0 m1"></div>
+
         </div>
 
-    </div>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- HERE CDN and JS-->
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-    <!--jQuery link-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/permitapp.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- HERE CDN and JS-->
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+        <!--jQuery link-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/permitapp.js"></script>
 
 </body>
 
