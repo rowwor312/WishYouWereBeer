@@ -13,7 +13,7 @@
     margin: 0em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
-    font-family:'Swanky and Moo Moo', cursive;
+    font-family:"Swanky and Moo Moo", cursive;
 }
 
 #map{
@@ -23,12 +23,14 @@
     border: 0.2em solid black;
 }
 
-#select-a-hood {
+.button-card {
     width: 36.45em;
     margin: auto;
-    align-content: center;
+    text-align: center;
     border: solid black;
-    font-family: "Geizer Regular";
+    font-family: "Geizer Regular", serif;
+    font-size: 1rem;
+    width: 100%;
 }
 .buttons {
     width: 36.45em;
@@ -62,7 +64,7 @@
         width: 7.5em;
         display: inline-block;
     }
-    #table-date {
+    #table-data {
         font-size: 1.5rem;
     }
 }
@@ -77,14 +79,15 @@
 #table-data {
     border: solid black;
     background-color: white;
-    font-family: "Geizer Regular";
+    font-family: "Geizer Regular", serif;
     font-size: 1.5rem;
     align-content: center;
 }
 
 #table-body {
     background-color: white;
-        font-family: 'Geizer Regular';
+    font-family: "Geizer Regular", serif;
+    font-size: 1.5rem;
 }
 
 #midtown {
