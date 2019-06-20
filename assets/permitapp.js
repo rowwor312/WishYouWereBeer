@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     // Adding click event listen listener to all buttons
@@ -18,8 +17,8 @@ $(document).ready(function () {
             map.setCenter({ lat: mapLat, lng: mapLon });
             map.setZoom(15.75);
         };
+        
         moveMapToNeighborhood(map);
-
 
         var queryURL = "https://data.nashville.gov/resource/3wb6-xy3j.json?$where=within_circle(mapped_location," + mapLocation + mapRange + ")&permit_subtype=ONSALES&$limit=10";
 
@@ -52,10 +51,11 @@ $(document).ready(function () {
 
                     var responseAddress = JSON.parse(response[i].mapped_location.human_address); var humanAddress = $("<p>").text(responseAddress.address);
 
-                    // Creating a paragraph tag with the result item's business name
+                    // Storing business name and address for table use
                     var businessName = response[i].business_name;
                     var humanAddress = responseAddress.address;
 
+                    // Populates arrays with location data for marker use
                     latList.push(response[i].mapped_location.latitude);
                     longList.push(response[i].mapped_location.longitude);
 
@@ -69,8 +69,7 @@ $(document).ready(function () {
                     // Add marker on map
                     map.addObject(marker);
 
-                    // Prependng the nameDiv to the HTML page in the "#names-appear-here" div
-                    // $("#names-appear-here").append(nameDiv);
+                    // Add business data to table
                     $("#table-data").append("<tr><td>" + businessName + "</td><td>" + humanAddress);
                 };
 
@@ -81,19 +80,20 @@ $(document).ready(function () {
 
     // ----- INITIALIZE MAP -----
 
-    //Step 1: initialize communication with the platform
+    // Step 1: initialize communication with the platform
     var platform = new H.service.Platform({
         "app_id": "k3EFdG3OsNPMzswnSPnJ",
         "app_code": "649NiziJD5JZ3hGvJqbQMg",
         useHTTPS: true
     });
+    // Define map window area
     var pixelRatio = window.devicePixelRatio || 1;
     var defaultLayers = platform.createDefaultLayers({
         tileSize: pixelRatio === 1 ? 256 : 512,
         ppi: pixelRatio === 1 ? undefined : 320
     });
 
-    //Step 2: initialize a map
+    // Step 2: initialize a map
     var map = new H.Map(document.getElementById("map"),
         defaultLayers.normal.map, { pixelRatio: pixelRatio });
 
@@ -104,16 +104,15 @@ $(document).ready(function () {
     }
 
     //Step 3: make the map interactive
-    // MapEvents enables the event system
     // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
     var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
     // Create the default UI components
     var ui = H.ui.UI.createDefault(map, defaultLayers);
 
-    // Now use the map as required...
     moveMapToNashville(map);
 
+    // Create neighborhood circles
     function addCirclesToMap(map) {
 
         // Downtown
@@ -162,5 +161,4 @@ $(document).ready(function () {
         ));
     }
     addCirclesToMap(map);
-
 });
