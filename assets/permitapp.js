@@ -1,8 +1,9 @@
-
 $(document).ready(function () {
+
 
     // Adding click event listen listener to all buttons
     $("button").on("click", function () {
+
 
         // Clear Table 
         $("#table-body").empty();
