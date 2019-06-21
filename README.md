@@ -10,7 +10,3 @@
         *An interactive map showing the 10 establishments per area.
         *Name and street address of each establishment per area listed in a table
 
-
-## Images
-![Image] (http://www.nashvillelife.com/Nashville-Bars-with-Live-Music)
-![Image](https://www.southernfatty.com/nashville-classics-music-city/)
