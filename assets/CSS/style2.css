@@ -18,7 +18,7 @@ body {
     margin: 0em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
 }
 
 #map{
@@ -33,7 +33,7 @@ body {
     margin: auto;
     text-align: center;
     border: 0.2em solid black;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
     font-size: 1.2rem;
     width: 100%;
     padding-top: 1em;
@@ -74,7 +74,7 @@ body {
 #table-data {
     border: 0.2em solid black;
     background-color: white;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
     font-size: 1.5rem;
     align-content: center;
     background-color:#5FB2F2;
@@ -82,7 +82,7 @@ body {
 
 #table-body {
     background-color: white;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
     font-size: 1.5rem;
     background-color:#5FB2F2;
 }
@@ -91,19 +91,19 @@ body {
     background-color: rgba(255, 0, 0, 0.9);
     color: black;
     font-weight: bold;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
 }
 
 #broadway {
     background-color: rgba(55, 85, 170, 0.9);
     color: black;
     font-weight: bold;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
 }
 
 #east {
     background-color: rgba(0, 128, 0, 0.9);
     color: black;
     font-weight: bold;
-    font-family: 'Righteous', cursive;
+    font-family: "Righteous", cursive;
 }
