@@ -1,3 +1,7 @@
+body {
+    background-image: linear-gradient(to bottom, #e30d58, #c71455, #ab1851, #8f1b4a, #741c42, #270614);
+}
+
 #title {
     padding-top: 0;
     padding-bottom: 0;
@@ -8,10 +12,9 @@
     margin: 0em;
     padding: 0em;
     margin-top: 1em;
-    background-color: lightseagreen;
+    background-color:#5FB2F2;
 }
 .title-text {
-    /* font-size: 3.5em; */
     margin: 0em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -29,13 +32,13 @@
     width: 36.45em;
     margin: auto;
     text-align: center;
-    border: solid black;
+    border: 0.2em solid black;
     font-family: 'Righteous', cursive;
     font-size: 1.2rem;
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: lightseagreen;
+    background-color:#5FB2F2;
 }
 .buttons {
     width: 30%;
@@ -45,17 +48,10 @@
 .action-btn {
     width: 12em;
     display: inline-block;
-    border: solid black;
+    border: 0.2em solid black;
 }
 
 @media only screen and (min-width: 370px) {
-    body {
-        width: 100vw;
-        background-image: url("../images/Nashville-Classics-Downtown-Broadway-0524.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: scroll;
-    }
     .container {
         width: 90%;
         max-width: 90%;
@@ -73,34 +69,27 @@
         font-size: 1.5rem;
     }
 }
-/* @media screen and (min-width: 600px) {
-    body {
-        background-image: url("../images/Nashville-Classics-Downtown-Broadway-0504.jpg");
-        background-attachment: scroll;
-    }
-} */
 
 
 #table-data {
-    border: solid black;
+    border: 0.2em solid black;
     background-color: white;
     font-family: 'Righteous', cursive;
     font-size: 1.5rem;
     align-content: center;
-    background-color: lightseagreen;
+    background-color:#5FB2F2;
 }
 
 #table-body {
     background-color: white;
     font-family: 'Righteous', cursive;
     font-size: 1.5rem;
-    background-color: lightseagreen;
+    background-color:#5FB2F2;
 }
 
 #midtown {
     background-color: rgba(255, 0, 0, 0.9);
     color: black;
-    font-family: "Swanky and Moo Moo", cursive;
     font-weight: bold;
     font-family: 'Righteous', cursive;
 }
@@ -108,7 +97,6 @@
 #broadway {
     background-color: rgba(55, 85, 170, 0.9);
     color: black;
-    font-family: "Swanky and Moo Moo", cursive;
     font-weight: bold;
     font-family: 'Righteous', cursive;
 }
@@ -116,7 +104,6 @@
 #east {
     background-color: rgba(0, 128, 0, 0.9);
     color: black;
-    font-family: "Swanky and Moo Moo", cursive;
     font-weight: bold;
     font-family: 'Righteous', cursive;
 }
